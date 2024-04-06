@@ -1,63 +1,19 @@
 package com.ykic;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.apache.commons.cli.*;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Main {
-
-
     static String dataPath = "";
     static int indexedColumnId = -1;
     static String inputFilePath = "";
     static String outputFilePath = "";
 
     public static void main(String[] args) {
-//        ReaderCSV readerCSV = new ReaderCSV("D:\\git\\courseGeekBrains\\src\\main\\resources\\test.csv", 2);
-//        readerCSV.readData();
-//        System.out.println("\n");
-//        System.out.println(readerCSV.getData());
-
-//        Trie trie = new Trie();
-//
-//        trie.insert(new Couple( 1, "apple kiwi"));
-//        trie.insert(new Couple(2, "app"));
-//        trie.insert(new Couple(3, "apricot"));
-//        trie.insert(new Couple(4, "banana"));
-//
-//        List<Integer> foundIndexes = trie.search("apple");
-//        System.out.println(foundIndexes);
-//
-
-
-//        ReadTXT readTXT = new ReadTXT("D:\\\\git\\\\courseGeekBrains\\\\src\\\\main\\\\resources\\\\test.txt");
-//        readTXT.readData();
-//        System.out.println(readTXT.getData());
-
-        Options options = new Options();
-        Option dataOption = new Option("d", "data", true, "path to data");
-        dataOption.setRequired(true);
-        options.addOption(dataOption);
-
-        Option indexOption = new Option("i", "indexed-column-id", true, "column index");
-        indexOption.setRequired(true);
-        options.addOption(indexOption);
-
-        Option inputFileOption = new Option("in", "input-file", true, "path to input file");
-        inputFileOption.setRequired(true);
-        options.addOption(inputFileOption);
-
-        Option outputFileOption = new Option("out", "output-file", true, "path to output file");
-        outputFileOption.setRequired(true);
-        options.addOption(outputFileOption);
+        Options options = getOptions();
 
         CommandLineParser parser = new DefaultParser();
         HelpFormatter formatter = new HelpFormatter();
@@ -77,19 +33,77 @@ public class Main {
         inputFilePath = cmd.getOptionValue("input-file");
         outputFilePath = cmd.getOptionValue("output-file");
 
-
-        System.out.println(FileOperations.checkFileExists(dataPath));
-        System.out.println(FileOperations.checkFileExists(inputFilePath));
-        System.out.println(FileOperations.checkFileExists(outputFilePath));
-
         if (!validateInputs()) {
             System.exit(-1);
             return;
         }
 
+        ReaderCSV readerCSV = new ReaderCSV(dataPath, indexedColumnId);
+        ReaderTXT readerTXT = new ReaderTXT(inputFilePath);
+        List<SearchItem> searchItems = new ArrayList<>();
+        SearchResult searchResult = new SearchResult();
+        Trie trie;
+
+        long start = System.nanoTime();
+        readerCSV.readData();
+        long finish = System.nanoTime();
+        long timeElapsed = (finish - start) / 1_000_000;
+        searchResult.setInitTime(timeElapsed);
 
 
+
+        trie = readerCSV.getData();
+
+        readerTXT.readData();
+        ArrayList<String> searchNames = readerTXT.getData();
+
+        List<Integer> arr;
+
+
+        for(String searchName : searchNames) {
+            start = System.nanoTime();
+            arr = trie.search(searchName);
+            finish = System.nanoTime();
+            timeElapsed = (finish - start) / 1_000_000;
+
+            searchItems.add(new SearchItem(searchName, arr, timeElapsed));
+        }
+
+        searchResult.setResult(searchItems);
+
+        FileOperations.serializeObj(outputFilePath, searchResult);
+
+
+
+
+        arr = trie.search("Bow");
+        Collections.sort(arr);
+
+
+        System.out.println(timeElapsed);
+        System.out.println(arr);
     }
+
+    private static Options getOptions() {
+        Options options = new Options();
+        Option dataOption = new Option("d", "data", true, "path to data");
+        dataOption.setRequired(true);
+        options.addOption(dataOption);
+
+        Option indexOption = new Option("i", "indexed-column-id", true, "column index");
+        indexOption.setRequired(true);
+        options.addOption(indexOption);
+
+        Option inputFileOption = new Option("in", "input-file", true, "path to input file");
+        inputFileOption.setRequired(true);
+        options.addOption(inputFileOption);
+
+        Option outputFileOption = new Option("out", "output-file", true, "path to output file");
+        outputFileOption.setRequired(true);
+        options.addOption(outputFileOption);
+        return options;
+    }
+
     public static boolean validateInputs() {
         return FileOperations.checkFileExists(dataPath) && FileOperations.checkFileExists(inputFilePath) && (indexedColumnId > 0 && indexedColumnId<15);
     }

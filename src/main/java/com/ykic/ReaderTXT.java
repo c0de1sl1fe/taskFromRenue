@@ -4,13 +4,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-public class ReadTXT {
+public class ReaderTXT {
     private ArrayList<String> data;
     private String path;
 
-    public ReadTXT(String path) {
+    public ReaderTXT(String path) {
         data = new ArrayList<>();
         this.path = path;
     }
