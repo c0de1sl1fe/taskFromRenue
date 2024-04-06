@@ -13,26 +13,8 @@ public class Main {
     static String outputFilePath = "";
 
     public static void main(String[] args) {
-        Options options = getOptions();
 
-        CommandLineParser parser = new DefaultParser();
-        HelpFormatter formatter = new HelpFormatter();
-        CommandLine cmd;
-
-        try {
-            cmd = parser.parse(options, args);
-        } catch (ParseException e) {
-            System.out.println(e.getMessage());
-            formatter.printHelp("utility-name", options);
-            System.exit(-1);
-            return;
-        }
-
-        dataPath = cmd.getOptionValue("data");
-        indexedColumnId = Integer.parseInt(cmd.getOptionValue("indexed-column-id"));
-        inputFilePath = cmd.getOptionValue("input-file");
-        outputFilePath = cmd.getOptionValue("output-file");
-
+        test(args);
         if (!validateInputs()) {
             System.exit(-1);
             return;
@@ -74,14 +56,6 @@ public class Main {
         FileOperations.serializeObj(outputFilePath, searchResult);
 
 
-
-
-        arr = trie.search("Bow");
-        Collections.sort(arr);
-
-
-        System.out.println(timeElapsed);
-        System.out.println(arr);
     }
 
     private static Options getOptions() {
@@ -108,6 +82,27 @@ public class Main {
         return FileOperations.checkFileExists(dataPath) && FileOperations.checkFileExists(inputFilePath) && (indexedColumnId > 0 && indexedColumnId<15);
     }
 
+    public static void test(String[] args) {
+        Options options = getOptions();
+
+        CommandLineParser parser = new DefaultParser();
+        HelpFormatter formatter = new HelpFormatter();
+        CommandLine cmd;
+
+        try {
+            cmd = parser.parse(options, args);
+        } catch (ParseException e) {
+            System.out.println(e.getMessage());
+            formatter.printHelp("utility-name", options);
+            System.exit(-1);
+            return;
+        }
+
+        dataPath = cmd.getOptionValue("data");
+        indexedColumnId = Integer.parseInt(cmd.getOptionValue("indexed-column-id"));
+        inputFilePath = cmd.getOptionValue("input-file");
+        outputFilePath = cmd.getOptionValue("output-file");
+    }
 
 }
 

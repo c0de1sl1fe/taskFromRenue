@@ -7,13 +7,14 @@ import java.io.IOException;
 public class ReaderCSV {
     private String path;
     private int targetId;
-    private Trie data1;
+    private Trie data;
 
     public ReaderCSV(String path, int targetId) {
         this.path = path;
         this.targetId = targetId;
-        this.data1 = new Trie();
+        this.data = new Trie();
     }
+
 
     public void readData() {
         String line;
@@ -23,7 +24,8 @@ public class ReaderCSV {
 
             while ((line = br.readLine()) != null) {
                 String[] tmp = line.split(cvsSplitBy);
-                data1.insert(new Couple(Integer.parseInt(tmp[0]), tmp[targetId-1]));
+                data.insert(new Couple(Integer.parseInt(tmp[0]), tmp[targetId-1]));
+//                data.insert(tmp[targetId-1], Integer.parseInt(tmp[0]));
             }
 
         } catch (IOException e) {
@@ -50,6 +52,6 @@ public class ReaderCSV {
     }
 
     public Trie getData() {
-        return data1;
+        return data;
     }
 }

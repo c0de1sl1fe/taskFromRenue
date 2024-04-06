@@ -7,7 +7,6 @@ class SearchItem {
     private List<Integer> result;
     private long time;
 
-    // Конструкторы, геттеры и сеттеры
     public SearchItem(String search, List<Integer> result, long time) {
         this.search = search;
         this.result = result;

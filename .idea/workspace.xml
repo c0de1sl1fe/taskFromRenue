@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="taskFromRenue:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9bcd830-bcaf-4425-bf5d-39bef69dc8d4" name="Changes" comment="Add: &#10;- FileOperations.java: checkFileExist(), serializeObj()&#10;- validateInputs()">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ykic/SearchItem.java" afterDir="false" />
+    <list default="true" id="e9bcd830-bcaf-4425-bf5d-39bef69dc8d4" name="Changes" comment="Add: &#10;- measuring time&#10;- optimize code&#10;putted together all functions">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/FileOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/ReadTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/ReaderTXT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/ReaderCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/ReaderCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/SearchResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CopyOfAirports.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CopyOfAirports.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/SearchItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/SearchItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/Trie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/Trie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/result1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/result1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +61,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.Main.executor": "Run",
     "Application.RealTest.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -69,6 +76,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.build.tools.auto.reload": "ALL",
     "settings.editor.selected.configurable": "build.tools",
     "vue.rearranger.settings.migration": "true"
@@ -114,7 +124,7 @@
       <updated>1712156402214</updated>
       <workItem from="1712156403238" duration="2000" />
       <workItem from="1712311103749" duration="2705000" />
-      <workItem from="1712381756954" duration="13611000" />
+      <workItem from="1712381756954" duration="18467000" />
     </task>
     <task id="LOCAL-00001" summary="Add: &#10;- FileOperations.java: checkFileExist(), serializeObj()&#10;- validateInputs()">
       <option name="closed" value="true" />
@@ -124,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712390370987</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add: &#10;- measuring time&#10;- optimize code&#10;putted together all functions">
+      <option name="closed" value="true" />
+      <created>1712414558751</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712414558751</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +151,17 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add: &#10;- FileOperations.java: checkFileExist(), serializeObj()&#10;- validateInputs()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: &#10;- FileOperations.java: checkFileExist(), serializeObj()&#10;- validateInputs()" />
+    <MESSAGE value="Add: &#10;- measuring time&#10;- optimize code&#10;putted together all functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: &#10;- measuring time&#10;- optimize code&#10;putted together all functions" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
