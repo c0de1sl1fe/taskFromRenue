@@ -22,7 +22,7 @@ public class ReadTXT {
                 data.add(line);
             }
         } catch (IOException e) {
-            System.err.println("Ошибка при чтении файла: " + e.getMessage());
+            System.err.println("Reading error: " + e.getMessage());
         }
     }
 

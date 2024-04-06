@@ -5,29 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9bcd830-bcaf-4425-bf5d-39bef69dc8d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ykic/FileOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ykic/SearchResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/result1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/ReadTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/ReadTXT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ykic/ReaderCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ykic/ReaderCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Copy of airports.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CopyOfAirports.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "c0de1sl1fe"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/c0de1sl1fe/taskFromRenue.git",
+    "accountId": "8a3b9801-575b-4854-8ef6-171c2ce97946"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2eaxHMY70SUWOeNMZ9NUaN6F03U" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Main.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -49,7 +77,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ykic.Main" />
       <module name="taskFromRenue" />
-      <option name="PROGRAM_PARAMETERS" value="--data /home/test/airports.csv --indexed-column-id 3 --input-file /temp/input1.txt  --output-file /temp/result1.json" />
+      <option name="PROGRAM_PARAMETERS" value="--data D:\git\taskFromRenue\src\main\resources\CopyOfAirports.csv --indexed-column-id 3 --input-file D:\git\taskFromRenue\src\main\resources\test.txt --output-file D:\git\taskFromRenue\src\main\resources\result1.json" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -58,7 +86,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -72,10 +101,14 @@
       <updated>1712156402214</updated>
       <workItem from="1712156403238" duration="2000" />
       <workItem from="1712311103749" duration="2705000" />
+      <workItem from="1712381756954" duration="6540000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

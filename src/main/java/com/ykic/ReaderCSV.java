@@ -9,11 +9,13 @@ import java.util.Arrays;
 public class ReaderCSV {
     private String path;
     private int targetId;
+    private Trie data1;
     private ArrayList<Couple> data;
 
     public ReaderCSV(String path, int targetId) {
         this.path = path;
         this.targetId = targetId;
+        this.data1 = new Trie();
         this.data = new ArrayList<>();
     }
 
@@ -24,9 +26,9 @@ public class ReaderCSV {
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 
             while ((line = br.readLine()) != null) {
-                // используем запятую в качестве разделителя
                 String[] tmp = line.split(cvsSplitBy);
-                data.add(new Couple(Integer.parseInt(tmp[0]), tmp[targetId-1]));
+                data1.insert(new Couple(Integer.parseInt(tmp[0]), tmp[targetId-1]));
+//                data.add(new Couple(Integer.parseInt(tmp[0]), tmp[targetId-1]));
                 System.out.println(Arrays.toString(line.split(cvsSplitBy)));
             }
 

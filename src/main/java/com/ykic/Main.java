@@ -1,11 +1,25 @@
 package com.ykic;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.commons.cli.*;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
 
 public class Main {
+
+
+    static String dataPath = "";
+    static int indexedColumnId = -1;
+    static String inputFilePath = "";
+    static String outputFilePath = "";
+
     public static void main(String[] args) {
 //        ReaderCSV readerCSV = new ReaderCSV("D:\\git\\courseGeekBrains\\src\\main\\resources\\test.csv", 2);
 //        readerCSV.readData();
@@ -29,7 +43,6 @@ public class Main {
 //        System.out.println(readTXT.getData());
 
         Options options = new Options();
-
         Option dataOption = new Option("d", "data", true, "path to data");
         dataOption.setRequired(true);
         options.addOption(dataOption);
@@ -59,16 +72,29 @@ public class Main {
             return;
         }
 
-        String dataPath = cmd.getOptionValue("data");
-        String indexedColumnId = cmd.getOptionValue("indexed-column-id");
-        String inputFilePath = cmd.getOptionValue("input-file");
-        String outputFilePath = cmd.getOptionValue("output-file");
+        dataPath = cmd.getOptionValue("data");
+        indexedColumnId = Integer.parseInt(cmd.getOptionValue("indexed-column-id"));
+        inputFilePath = cmd.getOptionValue("input-file");
+        outputFilePath = cmd.getOptionValue("output-file");
 
-        System.out.println("Путь к данным: " + dataPath);
-        System.out.println("Индексированный ID колонки: " + indexedColumnId);
-        System.out.println("Путь к входному файлу: " + inputFilePath);
-        System.out.println("Путь к выходному файлу: " + outputFilePath);
+
+        System.out.println(FileOperations.checkFileExists(dataPath));
+        System.out.println(FileOperations.checkFileExists(inputFilePath));
+        System.out.println(FileOperations.checkFileExists(outputFilePath));
+
+        if (!validateInputs()) {
+            System.exit(-1);
+            return;
+        }
+
+
+
     }
+    public static boolean validateInputs() {
+        return FileOperations.checkFileExists(dataPath) && FileOperations.checkFileExists(inputFilePath) && (indexedColumnId > 0 && indexedColumnId<15);
+    }
+
+
 }
 
 
